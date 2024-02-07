@@ -54,3 +54,8 @@ This project allows users to explore the latest movies, view their details, and 
 - **Personalized Recommendations:** Receive personalized movie recommendations through the OpenAI GPT integration.
 
 ## Project Screenshots:
+![image](https://github.com/Jagrati1213/film-chicks/assets/85276293/fd02ca83-1d03-4ef2-98e9-a751c4961520)
+![image](https://github.com/Jagrati1213/film-chicks/assets/85276293/1c682812-5fe3-4756-8105-fbb258c3b697)
+![image](https://github.com/Jagrati1213/film-chicks/assets/85276293/86af8886-a960-43ce-99e9-48b63bb75f60)
+
+
