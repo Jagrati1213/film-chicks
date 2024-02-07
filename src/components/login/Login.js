@@ -83,7 +83,7 @@ function Login() {
             {/* Form Part */}
             <div className='w-full p-2 md:p-10 mt-36 md:mt-28 flex justify-center text-white'>
                 <form onSubmit={handleOnsubmit}
-                    className="login_container sm:w-full md:w-8/12 lg:w-4/12 xl:3/12 bg-black bg-opacity-80 p-5 md:p-10 z-20">
+                    className="login_container w-full md:w-8/12 lg:w-4/12 xl:3/12 bg-black bg-opacity-80 p-5 md:p-10 z-20">
                     <h3 className='text-xl md:text-3xl font-semibold my-3 md:my-6'>
                         {isSignInForm ? 'SignIn' : 'SignUp'}
                     </h3>
