@@ -1,8 +1,8 @@
-# Film-chicks
+# Film-chicks 🚀
 
 Film-chicks is a web application built with React JS, Tailwind CSS, React Icons, Redux Toolkit, React Router, Firebase (for data storage and authentication), and OpenAI GPT (for providing movie recommendations). 
 This project allows users to explore the latest movies, view their details, and receive personalized movie recommendations.
-
+[Flim-chicks](https://film-chicks-hm83.vercel.app/)
 ## Features
 
 - **Latest Movies:** Browse and explore the latest movies with ease.
