@@ -70,9 +70,7 @@ export const SearchBar = () => {
                 })
                 .catch((error) => {
                     if (error.status == 429) setError(error.message)
-                    if (error.status == 401) {
-                        setShowModal(true);
-                    };
+                    if (error.status == 401) setShowModal(true)
                     setLoading(false);
                 });
         }
