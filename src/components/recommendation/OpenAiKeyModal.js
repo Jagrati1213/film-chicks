@@ -94,7 +94,7 @@ export const OpenAiKeyModal = ({ message_401, setShowModal, showModal, setError 
                     <p className='text-red-600'>{message}</p>
                 </div>
                 <div className="p-3 flex items-center justify-start">
-                    <button onClick={handleAddKey} className="text-sm font-semibold text-white bg-green-500 rounded-sm px-4 py-2">Add Key</button>
+                    <button onClick={handleAddKey} className="text-sm font-semibold text-white bg-green-500 hover:bg-green-600 rounded-sm px-4 py-2">Add Key</button>
                 </div>
             </div>
         </div>
