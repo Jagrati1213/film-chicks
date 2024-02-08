@@ -43,16 +43,22 @@ export const SearchBar = () => {
             getTmdbRecommendation(searchRef.current.value, user)
                 .then(async (data) => {
 
-                    dispatch(addGptSearch({ moviesName: data[1], moviesResult: data[0] }));
-                    dispatch(setLoading(false));
+                    if (data[0][0].length === 0) {
+                        setError(data[1]);
+                        dispatch(setLoading(false));
+                    }
+                    else {
+                        dispatch(addGptSearch({ moviesName: data[1], moviesResult: data[0] }));
+                        dispatch(setLoading(false));
 
-                    // Update doc Limit
-                    await updateDoc(userRef, {
-                        searchLimit: user?.searchLimit - 1,
-                    });
-                    // Get doc && Update in store
-                    const docData = await getFirebaseStoreDoc(user?.uid);
-                    dispatch(addUser({ ...user, searchLimit: docData?.searchLimit }));
+                        // Update doc Limit
+                        await updateDoc(userRef, {
+                            searchLimit: user?.searchLimit - 1,
+                        });
+                        // Get doc && Update in store
+                        const docData = await getFirebaseStoreDoc(user?.uid);
+                        dispatch(addUser({ ...user, searchLimit: docData?.searchLimit }));
+                    }
 
                 })
                 .catch((error) => {
@@ -73,9 +79,15 @@ export const SearchBar = () => {
 
             getTmdbRecommendation(searchRef.current.value, user)
                 .then((data) => {
-                    dispatch(addGptSearch({ moviesName: data[1], moviesResult: data[0] }))
-                    dispatch(setLoading(false));
-                    setError(null);
+                    if (data[0][0].length === 0) {
+                        setError(data[1]);
+                        dispatch(setLoading(false));
+                    }
+                    else {
+                        dispatch(addGptSearch({ moviesName: data[1], moviesResult: data[0] }))
+                        dispatch(setLoading(false));
+                        setError(null);
+                    }
                 })
                 .catch((error) => {
                     if (error.status == 429) setError(error.message)
