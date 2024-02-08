@@ -14,7 +14,6 @@ function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location.pathname);
   const gpt = useSelector((store) => store.gpt);
 
   useEffect(() => {
