@@ -39,20 +39,21 @@ export const SearchBar = () => {
 
             dispatch(setLoading(true));
 
-            // Update doc Limit
-            await updateDoc(userRef, {
-                searchLimit: user?.searchLimit - 1,
-            });
-
-            // Get doc && Update in store
-            const docData = await getFirebaseStoreDoc(user?.uid);
-            dispatch(addUser({ ...user, searchLimit: docData?.searchLimit }));
-
             // Get Search query data
             getTmdbRecommendation(searchRef.current.value, user)
-                .then((data) => {
-                    dispatch(addGptSearch({ moviesName: data[1], moviesResult: data[0] }))
+                .then(async (data) => {
+
+                    dispatch(addGptSearch({ moviesName: data[1], moviesResult: data[0] }));
                     dispatch(setLoading(false));
+
+                    // Update doc Limit
+                    await updateDoc(userRef, {
+                        searchLimit: user?.searchLimit - 1,
+                    });
+                    // Get doc && Update in store
+                    const docData = await getFirebaseStoreDoc(user?.uid);
+                    dispatch(addUser({ ...user, searchLimit: docData?.searchLimit }));
+
                 })
                 .catch((error) => {
                     if (error.status == 429) {
