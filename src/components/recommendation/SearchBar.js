@@ -26,6 +26,7 @@ export const SearchBar = () => {
 
         // stop auto submission
         e.preventDefault();
+        setError(null);
 
         // Create firebase Doc ref
         const userRef = doc(firestore, "users", user?.uid);
@@ -61,8 +62,13 @@ export const SearchBar = () => {
                 });
         }
         else {
-            user?.openAiKey === null ? (setShowModal(true), setMessage_401(false))
-                : dispatch(setLoading(true));
+
+            if (user?.openAiKey === null) {
+                setShowModal(true);
+                setMessage_401(false);
+            } else {
+                dispatch(setLoading(true));
+            }
 
             getTmdbRecommendation(searchRef.current.value, user)
                 .then((data) => {
@@ -85,7 +91,7 @@ export const SearchBar = () => {
 
     return (
         <>  {showModal && <OpenAiKeyModal
-            message={message_401}
+            message_401={message_401}
             showModal={showModal}
             setShowModal={setShowModal}
             setError={setError} />}
