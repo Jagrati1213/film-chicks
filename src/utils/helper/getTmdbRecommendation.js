@@ -47,6 +47,5 @@ export const getTmdbRecommendation = async (searchValue, user = null) => {
     // Convert promises into array
     const TmdbSuggestMovieResults = await Promise.all(moviesPromiseArray);
 
-    console.log(TmdbSuggestMovieResults);
     return [TmdbSuggestMovieResults, gptSuggestMovieNames];
 }
