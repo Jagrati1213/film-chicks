@@ -14,10 +14,11 @@ export const SearchBar = () => {
     const searchRef = useRef();
     const dispatch = useDispatch();
     const { loading } = useSelector((store) => store.gpt);
-
     const user = useSelector(selectUserState);
+
     const [showModal, setShowModal] = useState(false);
     const [Error, setError] = useState(null);
+    const [message_401, setMessage_401] = useState(false);
 
 
     // Search Logic
@@ -60,19 +61,21 @@ export const SearchBar = () => {
                 });
         }
         else {
-            user?.openAiKey === null ? setShowModal(true)
+            user?.openAiKey === null ? (setShowModal(true), setMessage_401(false))
                 : dispatch(setLoading(true));
 
             getTmdbRecommendation(searchRef.current.value, user)
                 .then((data) => {
                     dispatch(addGptSearch({ moviesName: data[1], moviesResult: data[0] }))
                     dispatch(setLoading(false));
+                    setError(null);
                 })
                 .catch((error) => {
                     if (error.status == 429) setError(error.message)
                     if (error.status == 401) {
                         setShowModal(true);
                         setError(error.message);
+                        setMessage_401(true);
                     }
                     dispatch(setLoading(false));
                 });
@@ -81,7 +84,11 @@ export const SearchBar = () => {
 
 
     return (
-        <>  {showModal && <OpenAiKeyModal showModal={showModal} setShowModal={setShowModal} />}
+        <>  {showModal && <OpenAiKeyModal
+            message={message_401}
+            showModal={showModal}
+            setShowModal={setShowModal}
+            setError={setError} />}
             <div className='w-full flex justify-center pt-32 flex-col items-center'>
                 <form onSubmit={(event) => handleOnsubmit(event)} className='justify-between bg-yellow-900 w-11/12 lg:w-1/2 rounded-sm flex'>
                     <input
