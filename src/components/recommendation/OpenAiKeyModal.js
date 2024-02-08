@@ -8,7 +8,7 @@ import { getFirebaseStoreDoc } from '../../utils/helper/getFirebaseStoreDoc';
 import { checkValidationOfKey } from '../../utils/helper/checkValidationofKey';
 import { AES } from 'crypto-js';
 
-export const OpenAiKeyModal = ({ message, setShowModal, showModal, setError }) => {
+export const OpenAiKeyModal = ({ message_401, setShowModal, showModal, setError }) => {
 
     const modalRef = useRef();
     const keyRef = useRef(null);
@@ -82,7 +82,7 @@ export const OpenAiKeyModal = ({ message, setShowModal, showModal, setError }) =
 
                 <div className="p-3">
                     <p>
-                        {message
+                        {message_401
                             ? 'You OpenAI Key is Invalid. To continue using the search feature,please add right OpenAI API key.'
                             : 'You have exceeded your search limit. To continue using the search feature,please add your OpenAI API key.'}
                     </p>
