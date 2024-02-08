@@ -15,8 +15,9 @@ export const getTmdbRecommendation = async (searchValue, user = null) => {
     const gptQuery = `Act as a movie recommendation system and suggest some movies for the query : ${searchValue}. Only give me 5 movies, comma separated like a example : Koi Mil Gaya, Dhamaal, Dhol, Bhagam Bhaag, Don.`
 
     //  Make a api call 
+    const decryptedText = AES.decrypt(user?.openAiKey, process.env.REACT_APP_SECRET_KEY).toString(CryptoJS.enc.Utf8);
     const userOpenai = new OpenAI({
-        apiKey: user?.openAiKey,
+        apiKey: decryptedText,
         dangerouslyAllowBrowser: true
     });
     let gptQueryResult = null;
