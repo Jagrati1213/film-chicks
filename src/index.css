@@ -2,6 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .header {
+        @apply bg-gradient-to-b from-black border-gray-200 bg-black fixed w-full z-20 left-0 ring-0;
+    }
+
+    .header-logo-name {
+        @apply text-xl md:text-3xl font-extrabold italic text-green-500 tracking-wide;
+    }
+
+    .toggle-btn {
+        @apply lg:bg-gray-900 text-white font-semibold lg:py-2 lg:pl-4 rounded-sm inline-flex items-center cursor-pointer right-0;
+    }
+
+    .header-dropdown {
+        @apply w-fit rounded-sm bg-gray-800 text-white whitespace-nowrap mt-2 border-t-4;
+    }
+
+    .header-dropdown-list {
+        @apply flex items-center gap-3 cursor-pointer py-3 hover:bg-gray-700 px-10;
+    }
+
+    .video-title {
+        @apply absolute flex flex-col md:items-start items-center w-screen h-full aspect-video justify-center px-6 md:px-12 md:pt-0 pt-10 bg-gradient-to-r from-black;
+    }
+
+    .search-input {
+        @apply w-full text-sm md:text-lg px-2 outline-none md:m-2 rounded-sm bg-transparent placeholder:text-white focus:hover:bg-yellow-700;
+    }
+
+    .search-btn {
+        @apply py-3 md:py-4 px-5 md:px-10 font-bold md:text-lg bg-yellow-800 rounded-sm tracking-wide hover:bg-yellow-700 disabled:bg-opacity-60 disabled:bg-yellow-950 disabled:cursor-not-allowed;
+    }
+
+    .modal {
+        @apply w-full h-screen flex items-center justify-center absolute bg-transparent backdrop-blur-sm z-[21];
+    }
+
+    .modal-input {
+        @apply w-full py-2 px-3 mt-5 bg-yellow-800 text-white placeholder:text-gray-300 border-2 border-yellow-600 outline-none rounded-sm;
+    }
+
+    .modal-btn {
+        @apply text-sm font-semibold text-white bg-green-500 hover:bg-green-600 rounded-sm px-4 py-2;
+    }
+
+    .auth-form {
+        @apply w-full md:w-8/12 lg:w-4/12 bg-black bg-opacity-80 p-5 md:p-10 z-20;
+    }
+
+    .auth-form-input {
+        @apply bg-[#333] w-full my-4 py-2 md:py-3 px-4 rounded mb-2 md:mb-5 focus:outline-green-500 focus:border-green-500;
+    }
+
+    .auth-btn {
+        @apply bg-green-500 hover:bg-green-700 font-semibold text-white py-2 md:py-4 px-2 w-full text-base md:text-xl rounded mb-2 md:mb-5;
+    }
+
+    .auth-link {
+        @apply cursor-pointer font-semibold text-white py-4 px-2 w-full text-sm mb-2 md:mb-5;
+    }
+
+    .cast-container {
+        @apply cursor-pointer hover:bg-gray-800 p-2 rounded-sm shadow-md hover:shadow-lg transition duration-300 ease-in-out w-36 md:w-40;
+    }
+
+    .skeleton-heading {
+        @apply m-5 w-96 h-[20px] px-2 md:px-6 rounded-sm bg-[#bdbbbb8f] animate-pulse;
+    }
+
+    .skeleton-div {
+        @apply flex w-max gap-4 px-2 md:px-6 bg-black bg-opacity-50 mt-3;
+    }
+}
+
 /* add bg-color on root */
 #root {
     background-color: black;

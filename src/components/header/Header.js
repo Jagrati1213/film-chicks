@@ -37,10 +37,10 @@ function Header() {
     }
 
     return (
-        <header className="bg-gradient-to-b from-black border-gray-200 bg-black fixed w-full z-20 left-0 ring-0">
+        <header className="header">
             <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <Link to={'/browse'}>
-                    <h3 className='text-xl md:text-3xl font-extrabold italic text-green-500 tracking-wide'>
+                    <h3 className='header-logo-name'>
                         FilmChicks
                     </h3>
                 </Link>
@@ -50,22 +50,22 @@ function Header() {
                         className="inline-block relative"
                         onClick={toggleMenu}>
 
-                        <div className="lg:bg-gray-900 text-white font-semibold lg:py-2 lg:pl-4 rounded-sm inline-flex items-center cursor-pointer right-0">
-                            <span className="mr-1 hidden lg:inline-block">{user?.displayName} </span>
+                        <div className="toggle-btn">
+                            <span className="mr-1 hidden lg:inline-block">Hi,Welcome </span>
                             <img src={user?.photoURL} className='w-8 mx-3 object-cover rounded-full' alt="film_clicks_avatar" />
                         </div>
 
                         <ul onClick={toggleMenu}
-                            className={`right-0 absolute ${isMenuShowMenu ? 'block' : 'hidden'} w-fit rounded-sm bg-gray-800 text-white whitespace-nowrap mt-2 border-t-4`}
+                            className={`right-0 absolute ${isMenuShowMenu ? 'block' : 'hidden'} header-dropdown`}
                         >
 
-                            <li className="cursor-pointer py-3 bg-gray-800 px-10">HI, welcome</li>
+                            <li className="cursor-pointer py-3 bg-gray-800 px-10">{user?.displayName}</li>
                             <li onClick={handleSignOut}
-                                className="flex items-center gap-3 cursor-pointer py-3  hover:bg-gray-700 px-10">
+                                className="header-dropdown-list">
                                 SignOut<FaSignOutAlt />
                             </li>
                             <li onClick={handleToggleRecommendationView}
-                                className='flex items-center gap-3 cursor-pointer py-3  hover:bg-gray-700 px-10'>
+                                className='header-dropdown-list'>
                                 <Link to={'/browse'}> {!gpt.showRecommendation ? 'Get Recommendation' : 'Back to Home'}</Link>
                             </li>
                         </ul>

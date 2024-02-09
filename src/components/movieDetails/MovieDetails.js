@@ -30,7 +30,6 @@ export const MovieDetails = () => {
                 id={movieDetails?.id} />
 
             {/* movieCast */}
-            <h1 className='text-3xl text-white'>{!casts}</h1>
             {
                 loading.casts ? <CastListSkeleton /> : <MovieCasts casts={casts} />
             }
