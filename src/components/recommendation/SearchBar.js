@@ -109,12 +109,14 @@ export const SearchBar = () => {
             setShowModal={setShowModal}
             setError={setError} />}
             <div className='w-full flex justify-center pt-32 flex-col items-center'>
-                <form onSubmit={(event) => handleOnsubmit(event)} className='justify-between bg-yellow-900 w-11/12 lg:w-1/2 rounded-sm flex'>
+                <form onSubmit={(event) => handleOnsubmit(event)}
+                    className='justify-between bg-yellow-900 w-11/12 lg:w-1/2 rounded-sm flex'>
                     <input
                         type="text"
                         ref={searchRef}
-                        placeholder="Which type of movies you want to see..." className='w-full text-sm md:text-lg px-2 outline-none md:m-2 rounded-sm bg-transparent placeholder:text-white focus:hover:bg-yellow-700' />
-                    <button className='py-3 md:py-4 px-5 md:px-10 font-bold md:text-lg bg-yellow-800 rounded-sm tracking-wide hover:bg-yellow-700 disabled:bg-opacity-60 disabled:bg-yellow-950 disabled:cursor-not-allowed'
+                        placeholder="Which type of movies you want to see..."
+                        className='search-input' />
+                    <button className='search-btn'
                         disabled={loading}>
                         {loading ? 'searching' : 'search'}
                         {

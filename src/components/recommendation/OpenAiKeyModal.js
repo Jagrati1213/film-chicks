@@ -68,7 +68,7 @@ export const OpenAiKeyModal = ({ message_401, setShowModal, showModal, setError 
     }, [showModal]);
 
     return (
-        <div id="modal" className="w-full h-screen flex items-center justify-center absolute bg-transparent  backdrop-blur-sm  z-[21]">
+        <div id="modal" className="modal">
             <div
                 className="text-white max-w-xl w-full rounded-sm py-5 px-10 bg-gray-950 z-50"
                 ref={modalRef}>
@@ -86,15 +86,17 @@ export const OpenAiKeyModal = ({ message_401, setShowModal, showModal, setError 
                             ? 'You OpenAI Key is Invalid. To continue using the search feature,please add right OpenAI API key.'
                             : 'You have exceeded your search limit. To continue using the search feature,please add your OpenAI API key.'}
                     </p>
-                    <a className="w-full text-sm decoration-solid underline text-blue-300 mt-3" href="https://platform.openai.com/" target='_blank'>Learn How to create openAi key..</a>
+                    <a className="w-full text-sm decoration-solid underline text-blue-300 mt-3"
+                        href="https://platform.openai.com/"
+                        target='_blank'>Learn How to create openAi key..</a>
                     <input ref={keyRef}
                         type="text"
                         placeholder='enter your key here'
-                        className='w-full py-2 px-3 mt-5 bg-yellow-800 text-white placeholder:text-gray-300 border-2 border-yellow-600 outline-none rounded-sm' />
+                        className='modal-input' />
                     <p className='text-red-600'>{message}</p>
                 </div>
                 <div className="p-3 flex items-center justify-start">
-                    <button onClick={handleAddKey} className="text-sm font-semibold text-white bg-green-500 hover:bg-green-600 rounded-sm px-4 py-2">Add Key</button>
+                    <button onClick={handleAddKey} className="modal-btn">Add Key</button>
                 </div>
             </div>
         </div>
