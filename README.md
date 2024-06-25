@@ -1,15 +1,13 @@
 # Film-chicks 🚀
 
-Film-chicks is a web application built with React JS, Tailwind CSS, React Icons, Redux Toolkit, React Router, Firebase (for data storage and authentication), and OpenAI GPT (for providing movie recommendations). 
+Film-chicks is a web application built with React JS, Tailwind CSS, React Icons, Redux Toolkit, React Router, Firebase (for authentication). 
 This project allows users to explore the latest movies, view their details, and receive personalized movie recommendations.
 [Flim-chicks](https://film-chicks-hm83.vercel.app/)
 ## Features
 
 - **Latest Movies:** Browse and explore the latest movies with ease.
 - **Movie Details:** View detailed information about each movie.
-- **Search Functionality:** Search for specific types of movies based on user preferences.
-- **Personalized Recommendations:** Get movie recommendations tailored to your interests using OpenAI GPT.
-- **Authentication:** Securely sign up and log in using Firebase authentication.
+- **Authentication:** Securely Login using Firebase authentication.
 
 ## Technologies Used
 
@@ -19,7 +17,6 @@ This project allows users to explore the latest movies, view their details, and 
 - **Redux Toolkit:** A state management library for React applications.
 - **React Router:** A library for adding navigation to React applications.
 - **Firebase:** A platform for building web and mobile applications with a serverless backend.
-- **OpenAI GPT:** A language model used for generating movie recommendations.
 
 ## Getting Started
 
@@ -50,8 +47,6 @@ This project allows users to explore the latest movies, view their details, and 
 
 - **Latest Movies:** Visit the "Latest Movies" section to discover new releases.
 - **Movie Details:** Click on a movie to view detailed information.
-- **Search Movies:** Use the search functionality to find movies based on your preferences.
-- **Personalized Recommendations:** Receive personalized movie recommendations through the OpenAI GPT integration.
 
 ## Project Screenshots:
 ![image](https://github.com/Jagrati1213/film-chicks/assets/85276293/fd02ca83-1d03-4ef2-98e9-a751c4961520)
