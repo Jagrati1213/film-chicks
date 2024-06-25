@@ -1,21 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+    user: null,
+};
 const UserSlice = createSlice({
     name: 'user',
-    initialState: {
-        uid: null,
-        email: null,
-        displayName: null,
-        photoURL: null,
-        searchLimit: null,
-        openAiKey: null,
-    },
+    initialState: initialState,
     reducers: {
-        addUser: (_, action) => {
-            return action.payload;
+        addUser: (state, action) => {
+            state.user = action.payload;
+            localStorage.setItem('user', JSON.stringify(action.payload));
         },
-        removeUser: () => {
-            return null;
+        removeUser: (state) => {
+            state.user = null;
+            localStorage.removeItem('user');
         },
     }
 });
