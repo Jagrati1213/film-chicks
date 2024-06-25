@@ -11,7 +11,7 @@ function Header() {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector((store) => store.user);
+    const { user } = useSelector((store) => store.user);
     const gpt = useSelector((store) => store.gpt);
     const [isMenuShowMenu, setIsMenuShow] = useState(false);
 
@@ -45,7 +45,7 @@ function Header() {
                     </h3>
                 </Link>
                 {
-                    user !== null &&
+                    (user !== null || localStorage.getItem('user')) &&
                     <div
                         className="inline-block relative"
                         onClick={toggleMenu}>
@@ -64,10 +64,10 @@ function Header() {
                                 className="header-dropdown-list">
                                 SignOut<FaSignOutAlt />
                             </li>
-                            <li onClick={handleToggleRecommendationView}
+                            {/* <li onClick={handleToggleRecommendationView}
                                 className='header-dropdown-list'>
                                 <Link to={'/browse'}> {!gpt.showRecommendation ? 'Get Recommendation' : 'Back to Home'}</Link>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 }

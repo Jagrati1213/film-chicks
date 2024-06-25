@@ -1,22 +1,19 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAA0QhT6MJUZF7DMpGzSYUVmpLziFrN7Wk",
-    authDomain: "film-chicks.firebaseapp.com",
-    projectId: "film-chicks",
-    storageBucket: "film-chicks.appspot.com",
-    messagingSenderId: "898516118386",
-    appId: "1:898516118386:web:2b1c0b79e36ac3f1848beb",
-    measurementId: "G-8GYHQ4B709"
+    apiKey: "AIzaSyAWW84CennnIr93AUYyGE3zdlsn18Lu_3U",
+    authDomain: "flimchicks.firebaseapp.com",
+    projectId: "flimchicks",
+    storageBucket: "flimchicks.appspot.com",
+    messagingSenderId: "318071807599",
+    appId: "1:318071807599:web:fcc9c12d10941fbd6c779a",
+    measurementId: "G-5Z9GXRNGJ7"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 export const auth = getAuth(app);
 export const firestore = getFirestore(app);
-
-export default app;
+export { GoogleAuthProvider, signInWithPopup, doc, getDoc, setDoc };
