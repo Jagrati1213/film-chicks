@@ -59,7 +59,6 @@ function Header() {
                             className={`right-0 absolute ${isMenuShowMenu ? 'block' : 'hidden'} header-dropdown`}
                         >
 
-                            <li className="cursor-pointer py-3 bg-gray-800 px-10">{user?.displayName}</li>
                             <li onClick={handleSignOut}
                                 className="header-dropdown-list">
                                 SignOut<FaSignOutAlt />
